@@ -41,7 +41,7 @@ jobs:
 
       - name: Push Docker Image to Container Registry (GCR)
         env:
-          GIT_TAG: v0.0.1
+          GIT_TAG: v0.0.2
         run: |-
           docker tag pythonflask:latest gcr.io/$PROJECT_ID/pythonflask:latest
           docker tag pythonflask:latest gcr.io/$PROJECT_ID/pythonflask:$GIT_TAG
@@ -50,7 +50,7 @@ jobs:
 
       - name: Push Docker Image to Artifact Registry
         env:
-          GIT_TAG: v0.0.1
+          GIT_TAG: v0.0.2
         run: |-
           docker tag pythonflask:latest us-east4-docker.pkg.dev/$PROJECT_ID/images/pythonflask:latest
           docker tag pythonflask:latest us-east4-docker.pkg.dev/$PROJECT_ID/images/pythonflask:$GIT_TAG
